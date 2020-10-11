@@ -1,29 +1,12 @@
-# vue-timer-widget
+# Vue Timer Widget
 
-## Project setup
-```
-npm install
-```
+El objetivo de este simple widget es integrar la función **interval** en el ciclo de vida de un componente de **VueJs**. El resultado final se ve de la siguiente manera:
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+![Vue Timer Widget](https://i.ibb.co/0Xhmkvy/vue-timer-widget.png)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Además de esto, he realizado los cáculos temporales utilizando la clase nativa **Date** de Javascript, agregándole algunos métodos adicionales y evitando de este modo dependencias externas como momentjs.
 
-### Run your unit tests
-```
-npm run test:unit
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### TODO
+- [] Implementación de test unitarios
+- [] Migración a Vue3
