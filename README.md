@@ -8,5 +8,5 @@ Además de esto, he realizado los cáculos temporales utilizando la clase nativa
 
 
 ### TODO
-- [] Implementación de test unitarios
-- [] Migración a Vue3
+- [ ] Implementación de test unitarios
+- [ ] Migración a Vue3
