@@ -10,6 +10,7 @@
 import { mapGetters } from "vuex";
 import CustomDate from "@/utils/CustomDate";
 import { status } from "@/enums";
+import { bus } from "@/utils/eventBus";
 export default {
   name: "Hour",
   props: {
@@ -36,6 +37,9 @@ export default {
   },
   created() {
     this.start();
+  },
+  mounted() {
+    bus.$on("timerRestarted", () => this.stop());
   },
   computed: {
     ...mapGetters(["getTimerStatus"])
