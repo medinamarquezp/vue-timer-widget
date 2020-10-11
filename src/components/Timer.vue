@@ -73,9 +73,10 @@ export default {
         .addHours(this.getHours)
         .addMinutes(this.getMinutes)
         .addSeconds(this.getSeconds);
+      initTime.addSeconds(1);
       this.timerInterval = setInterval(() => {
-        this.isTimerEqualsToZero ? this.stop() : initTime.addSeconds(1);
         this.updateTime(initTime, endTime);
+        this.isTimerEqualsToZero ? this.stop() : initTime.addSeconds(1);
       }, 1000);
     },
     updateTime(initTime, endTime) {
@@ -88,6 +89,9 @@ export default {
     stop() {
       this.restart();
       clearInterval(this.timerInterval);
+      setTimeout(() => {
+        alert("⏰ El temporizador ha finalizado!!!");
+      }, 100);
     }
   }
 };
