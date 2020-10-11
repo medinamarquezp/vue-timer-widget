@@ -9,6 +9,7 @@
 <script>
 import { mapGetters } from "vuex";
 import CustomDate from "@/utils/CustomDate";
+import { status } from "@/enums";
 export default {
   name: "Hour",
   props: {
@@ -41,7 +42,7 @@ export default {
   },
   watch: {
     getTimerStatus(newValue) {
-      newValue === "started" ? this.stop() : this.start();
+      newValue === status.STARTED ? this.stop() : this.start();
     }
   },
   methods: {

@@ -5,16 +5,17 @@
 </template>
 
 <script>
+import { colors, actions } from "@/enums";
 export default {
   name: "Button",
   props: {
     color: {
       type: String,
-      default: "primary"
+      default: colors.PRIMARY
     },
     action: {
       type: String,
-      default: "pause"
+      default: actions.PAUSE
     },
     isDisabled: {
       type: Boolean,

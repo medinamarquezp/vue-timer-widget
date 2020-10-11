@@ -18,6 +18,7 @@
 <script>
 import { bus } from "@/utils/eventBus";
 import { mapGetters } from "vuex";
+import { status } from "@/enums";
 export default {
   name: "TimeInput",
   props: {
@@ -46,7 +47,8 @@ export default {
     ...mapGetters(["getTimerStatus"]),
     isTimerStarted() {
       return (
-        this.getTimerStatus === "started" || this.getTimerStatus === "stoped"
+        this.getTimerStatus === status.STARTED ||
+        this.getTimerStatus === status.STOPED
       );
     },
     updatedTimeValue: {
@@ -54,8 +56,9 @@ export default {
         return this.timeValue;
       },
       set: function(newValue) {
+        const newValueInt = parseInt(newValue);
         this.timeValue =
-          +newValue >= this.min && +newValue <= this.max ? +newValue : 0;
+          newValueInt >= this.min && newValueInt <= this.max ? newValueInt : 0;
       }
     }
   },
